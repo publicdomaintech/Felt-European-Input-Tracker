@@ -25,13 +25,16 @@ namespace Felt_32_European_32_Input_32_Tracker
     // Directives
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.Composition;
     using System.Drawing;
     using System.Windows.Forms;
+    using PdBets;
 
     /// <summary>
-    /// Description of MainForm.
+    /// Felt European Input Tracker 
     /// </summary>
-    public partial class MainForm : Form
+    [Export(typeof(IPdBets))]
+    public partial class MainForm : Form, IPdBets
     {
         /// <summary>
         /// The history list.
@@ -112,6 +115,45 @@ namespace Felt_32_European_32_Input_32_Tracker
                         // Halt flow
                         break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Processes incoming input and bet strings.
+        /// </summary>
+        /// <param name="inputString">Input string.</param>
+        /// <param name="betString">Bet string.</param>
+        public string Input(string inputString, string betString)
+        {
+            // Return passed input string
+            return inputString;
+        }
+
+        /// <summary>
+        /// Raises the set colors tool strip menu item drop down item clicked event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnSetColorsToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // Hold clicked times
+            int times;
+
+            // Try to parse x times integer
+            if (!int.TryParse(e.ClickedItem.Text.Replace("&", string.Empty).Replace("x", string.Empty), out times))
+            {
+                // Halt flow
+                return;
+            }
+
+            // Set current color dialog color
+            this.mainColorDialog.Color = this.numberColorList[times];
+
+            // Open color dialog, then check dialog result
+            if (mainColorDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Set current times color
+                this.numberColorList[times] = this.mainColorDialog.Color;
             }
         }
 
@@ -235,7 +277,14 @@ namespace Felt_32_European_32_Input_32_Tracker
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Code here
+            // Clear history list
+            this.historyList.Clear();
+
+            // Hit reset button
+            this.resetButton.PerformClick();
+
+            // Colorize buttons
+            this.ColorizeNumberButtons();
         }
 
         /// <summary>

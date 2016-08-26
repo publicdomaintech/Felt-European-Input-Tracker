@@ -734,6 +734,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.setColorsToolStripMenuItem.Name = "setColorsToolStripMenuItem";
         	this.setColorsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
         	this.setColorsToolStripMenuItem.Text = "&Set colors";
+            this.setColorsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSetColorsToolStripMenuItemDropDownItemClicked);
         	// 
         	// xToolStripMenuItem
         	// 

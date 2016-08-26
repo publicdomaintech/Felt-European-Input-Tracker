@@ -4,7 +4,7 @@
     <ProjectGuid>{5C1A0551-A4A2-42C1-8E57-8B700651F419}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Felt_32_European_32_Input_32_Tracker</RootNamespace>
     <AssemblyName>Felt_32_European_32_Input_32_Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -46,6 +46,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="IPdBets">
+      <HintPath>..\..\pdBets\IPdBets\bin\Release\IPdBets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm.cs" />
