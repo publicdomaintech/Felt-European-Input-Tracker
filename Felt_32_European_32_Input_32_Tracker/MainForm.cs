@@ -82,7 +82,7 @@ namespace Felt_32_European_32_Input_32_Tracker
             // Set number color list
             for (int i = 0; i <= 10; i++)
             {
-                // Colors by appearances
+                // Color by appearances
                 switch (i)
                 {
                 // First
@@ -122,7 +122,21 @@ namespace Felt_32_European_32_Input_32_Tracker
         /// <param name="e">Event arguments.</param>
         private void OnResetButtonClick(object sender, EventArgs e)
         {
-            // Code here
+            // Reset number appearances list
+            this.numberAppearancesList.Clear();
+
+            // Set number appearances list
+            for (int i = 0; i < 37; i++)
+            {
+                // Set appearances
+                this.numberAppearancesList.Add(0);
+            }
+
+            // Set last reset spins
+            this.lastResetSpin = this.historyList.Count;
+
+            // Colorize number buttons
+            this.ColorizeNumberButtons();
         }
 
         /// <summary>
