@@ -1,2 +1,2 @@
-# Felt-European-Input-Tracker
+# Felt European Input Tracker
 Roulette input module for pdBets.
