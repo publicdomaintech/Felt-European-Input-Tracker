@@ -216,9 +216,6 @@ namespace Felt_32_European_32_Input_32_Tracker
 
             // Update reset button count
             this.resetButton.Text = "Reset" + ((resetDifference < 1) ? string.Empty : " (" + resetDifference.ToString() + ")");
-
-            // Set appended spins text
-            string appendedSpinsText = this.historyList.Count == 0 ? string.Empty : " | " + this.historyList.Count.ToString() + " spin" + (this.historyList.Count > 1 ? "s" : string.Empty);
         }
 
         /// <summary>
@@ -248,7 +245,8 @@ namespace Felt_32_European_32_Input_32_Tracker
         /// <param name="e">Event arguments.</param>
         private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Code here
+            // About message
+            MessageBox.Show("Programmed by Victor L. Senior (VLS)" + Environment.NewLine + "www.publicdomain.tech / support@publicdomain.tech" + Environment.NewLine + Environment.NewLine + "Version 0.1 - August 2016.");
         }
 
         /// <summary>
