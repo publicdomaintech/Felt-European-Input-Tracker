@@ -704,7 +704,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	// 
         	this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
         	this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-        	this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
         	this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.undoToolStripMenuItem.Text = "&Undo";
         	this.undoToolStripMenuItem.Click += new System.EventHandler(this.OnUndoToolStripMenuItemClick);

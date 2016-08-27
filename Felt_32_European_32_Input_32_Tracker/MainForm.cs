@@ -119,10 +119,16 @@ namespace Felt_32_European_32_Input_32_Tracker
         }
 
         /// <summary>
+        /// Occurs when new input is sent.
+        /// </summary>
+        public event EventHandler<NewInputEventArgs> NewInput;
+
+        /// <summary>
         /// Processes incoming input and bet strings.
         /// </summary>
         /// <param name="inputString">Input string.</param>
         /// <param name="betString">Bet string.</param>
+        /// <returns>>The processed input string.</returns>
         public string Input(string inputString, string betString)
         {
             // Return passed input string
@@ -150,7 +156,7 @@ namespace Felt_32_European_32_Input_32_Tracker
             this.mainColorDialog.Color = this.numberColorList[times];
 
             // Open color dialog, then check dialog result
-            if (mainColorDialog.ShowDialog() == DialogResult.OK)
+            if (this.mainColorDialog.ShowDialog() == DialogResult.OK)
             {
                 // Set current times color
                 this.numberColorList[times] = this.mainColorDialog.Color;
@@ -212,6 +218,9 @@ namespace Felt_32_European_32_Input_32_Tracker
                 // Colorize buttons
                 this.ColorizeNumberButtons();
             }
+
+            // Send last number to pdBets
+            this.NewInput(sender, new NewInputEventArgs(lastNumber.ToString()));
         }
 
         /// <summary>
@@ -236,7 +245,7 @@ namespace Felt_32_European_32_Input_32_Tracker
                         // Set back color
                         numberButton.BackColor = this.numberColorList[this.numberAppearancesList[n]];   
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         // TODO Use 3+ color [Perhaps add default color for 10+]
                         numberButton.BackColor = Color.LightPink;
@@ -305,7 +314,24 @@ namespace Felt_32_European_32_Input_32_Tracker
         /// <param name="e">Event arguments.</param>
         private void OnUndoToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Code here
+            // Check there's something to remove
+            if (this.historyList.Count > 0)
+            {
+                // Hold previous number
+                int prevNumber = this.historyList[this.historyList.Count - 1];
+
+                // Decrement appearances
+                this.numberAppearancesList[prevNumber]--;
+
+                // Remove last from history list
+                this.historyList.RemoveAt(this.historyList.Count - 1);
+
+                // Colorize buttons
+                this.ColorizeNumberButtons();
+
+                // Send undo message to pdBets
+                this.NewInput(sender, new NewInputEventArgs("-U"));
+            }
         }
     }
 }
