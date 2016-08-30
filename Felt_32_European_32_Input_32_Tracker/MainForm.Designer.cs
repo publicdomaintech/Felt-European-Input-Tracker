@@ -92,6 +92,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
         	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainColorDialog = new System.Windows.Forms.ColorDialog();
+        	this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainTableLayoutPanel.SuspendLayout();
         	this.mainMenuStrip.SuspendLayout();
         	this.SuspendLayout();
@@ -695,7 +696,8 @@ namespace Felt_32_European_32_Input_32_Tracker
         	// editToolStripMenuItem
         	// 
         	this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.undoToolStripMenuItem});
+        	        	        	this.undoToolStripMenuItem,
+        	        	        	this.resetToolStripMenuItem});
         	this.editToolStripMenuItem.Name = "editToolStripMenuItem";
         	this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
         	this.editToolStripMenuItem.Text = "&Edit";
@@ -704,7 +706,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	// 
         	this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
         	this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+        	this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
         	this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.undoToolStripMenuItem.Text = "&Undo";
         	this.undoToolStripMenuItem.Click += new System.EventHandler(this.OnUndoToolStripMenuItemClick);
@@ -734,7 +736,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.setColorsToolStripMenuItem.Name = "setColorsToolStripMenuItem";
         	this.setColorsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
         	this.setColorsToolStripMenuItem.Text = "&Set colors";
-            this.setColorsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSetColorsToolStripMenuItemDropDownItemClicked);
+        	this.setColorsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSetColorsToolStripMenuItemDropDownItemClicked);
         	// 
         	// xToolStripMenuItem
         	// 
@@ -829,6 +831,15 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.aboutToolStripMenuItem.Text = "&About...";
         	this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
         	// 
+        	// resetToolStripMenuItem
+        	// 
+        	this.resetToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("resetToolStripMenuItem.Image")));
+        	this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+        	this.resetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+        	this.resetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+        	this.resetToolStripMenuItem.Text = "&Reset";
+        	this.resetToolStripMenuItem.Click += new System.EventHandler(this.OnResetButtonClick);
+        	// 
         	// MainForm
         	// 
         	this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -849,6 +860,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.ResumeLayout(false);
         	this.PerformLayout();
         }
+        private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.ColorDialog mainColorDialog;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
