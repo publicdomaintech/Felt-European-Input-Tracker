@@ -128,11 +128,11 @@ namespace Felt_32_European_32_Input_32_Tracker
         /// </summary>
         /// <param name="inputString">Input string.</param>
         /// <param name="betString">Bet string.</param>
-        /// <returns>>The processed input string.</returns>
+        /// <returns>>The processed bet string.</returns>
         public string Input(string inputString, string betString)
         {
-            // Return passed input string
-            return inputString;
+            // Return passed bet string
+            return betString;
         }
 
         /// <summary>
