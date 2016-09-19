@@ -76,6 +76,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.setColorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +93,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
         	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainColorDialog = new System.Windows.Forms.ColorDialog();
-        	this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.alwaysOntopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainTableLayoutPanel.SuspendLayout();
         	this.mainMenuStrip.SuspendLayout();
         	this.SuspendLayout();
@@ -689,7 +690,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
         	this.newToolStripMenuItem.Name = "newToolStripMenuItem";
         	this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-        	this.newToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+        	this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.newToolStripMenuItem.Text = "&New";
         	this.newToolStripMenuItem.Click += new System.EventHandler(this.OnNewToolStripMenuItemClick);
         	// 
@@ -711,10 +712,20 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.undoToolStripMenuItem.Text = "&Undo";
         	this.undoToolStripMenuItem.Click += new System.EventHandler(this.OnUndoToolStripMenuItemClick);
         	// 
+        	// resetToolStripMenuItem
+        	// 
+        	this.resetToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("resetToolStripMenuItem.Image")));
+        	this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+        	this.resetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+        	this.resetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+        	this.resetToolStripMenuItem.Text = "&Reset";
+        	this.resetToolStripMenuItem.Click += new System.EventHandler(this.OnResetButtonClick);
+        	// 
         	// optionsToolStripMenuItem
         	// 
         	this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.setColorsToolStripMenuItem});
+        	        	        	this.setColorsToolStripMenuItem,
+        	        	        	this.alwaysOntopToolStripMenuItem});
         	this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
         	this.optionsToolStripMenuItem.Size = new System.Drawing.Size(56, 22);
         	this.optionsToolStripMenuItem.Text = "&Options";
@@ -734,7 +745,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	        	        	this.xToolStripMenuItem9});
         	this.setColorsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("setColorsToolStripMenuItem.Image")));
         	this.setColorsToolStripMenuItem.Name = "setColorsToolStripMenuItem";
-        	this.setColorsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+        	this.setColorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
         	this.setColorsToolStripMenuItem.Text = "&Set colors";
         	this.setColorsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSetColorsToolStripMenuItemDropDownItemClicked);
         	// 
@@ -831,14 +842,13 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.aboutToolStripMenuItem.Text = "&About...";
         	this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
         	// 
-        	// resetToolStripMenuItem
+        	// alwaysOntopToolStripMenuItem
         	// 
-        	this.resetToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("resetToolStripMenuItem.Image")));
-        	this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-        	this.resetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-        	this.resetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.resetToolStripMenuItem.Text = "&Reset";
-        	this.resetToolStripMenuItem.Click += new System.EventHandler(this.OnResetButtonClick);
+        	this.alwaysOntopToolStripMenuItem.Name = "alwaysOntopToolStripMenuItem";
+        	this.alwaysOntopToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+        	this.alwaysOntopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+        	this.alwaysOntopToolStripMenuItem.Text = "Always on &top";
+        	this.alwaysOntopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOntopToolStripMenuItemClick);
         	// 
         	// MainForm
         	// 
@@ -860,6 +870,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         	this.ResumeLayout(false);
         	this.PerformLayout();
         }
+        private System.Windows.Forms.ToolStripMenuItem alwaysOntopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.ColorDialog mainColorDialog;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;

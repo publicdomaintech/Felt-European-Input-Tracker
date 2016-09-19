@@ -27,6 +27,7 @@ namespace Felt_32_European_32_Input_32_Tracker
     using System.Collections.Generic;
     using System.ComponentModel.Composition;
     using System.Drawing;
+    using System.Reflection;
     using System.Windows.Forms;
     using PdBets;
 
@@ -60,6 +61,11 @@ namespace Felt_32_European_32_Input_32_Tracker
         /// The last reset spin.
         /// </summary>
         private int lastResetSpin = 0;
+
+        /// <summary>
+        /// The current version
+        /// </summary>
+        private Version version = Assembly.GetExecutingAssembly().GetName().Version;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Felt_32_European_32_Input_32_Tracker.MainForm"/> class.
@@ -304,7 +310,7 @@ namespace Felt_32_European_32_Input_32_Tracker
         private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)
         {
             // About message
-            MessageBox.Show("Programmed by Victor L. Senior (VLS)" + Environment.NewLine + "www.publicdomain.tech / support@publicdomain.tech" + Environment.NewLine + Environment.NewLine + "Version 0.1 - August 2016.");
+            MessageBox.Show("Programmed by Victor L. Senior (VLS)" + Environment.NewLine + "www.publicdomain.tech / support@publicdomain.tech" + Environment.NewLine + Environment.NewLine + "Version " + this.version.Major + "." + this.version.Minor + " - September 2016.");
         }
 
         /// <summary>
@@ -332,6 +338,20 @@ namespace Felt_32_European_32_Input_32_Tracker
                 // Send undo message to pdBets
                 this.NewInput(sender, new NewInputEventArgs("-U"));
             }
+        }
+
+        /// <summary>
+        /// Raises the always ontop tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnAlwaysOntopToolStripMenuItemClick(object sender, System.EventArgs e)
+        {
+            // Toggle always on top tool strip menu item
+            this.alwaysOntopToolStripMenuItem.Checked = !this.alwaysOntopToolStripMenuItem.Checked;
+
+            // Set TopMost value
+            this.TopMost = this.alwaysOntopToolStripMenuItem.Checked;
         }
     }
 }
